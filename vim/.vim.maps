@@ -1,0 +1,5 @@
+
+set rnu
+
+" Maping starts here
+:imap jj <Esc>	

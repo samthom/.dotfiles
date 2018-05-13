@@ -1,0 +1,9 @@
+" Pathogen Init
+execute pathogen#infect()
+
+" Nerdtree mappings
+map <C-n> :NERDTreeToggle<CR>
+
+" Nerdtree Customisations
+let g:NERDTreeDirArrowExpandable = '▸'
+let g:NERDTreeDirArrowCollapsible = '▾'
