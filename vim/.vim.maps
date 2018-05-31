@@ -1,5 +1,20 @@
 
 set rnu
+set hidden
+set history=100
+set autoindent
+set hlsearch
+set showmatch
+
+" Basic maping starts here
+let mapleader=" "
+let base16colorspace=256
 
 " Maping starts here
-:imap jj <Esc>	
+:imap jj <Esc>
+map <leader>s :source ~/.vimrc<CR>
+map <leader>l :ls <CR>
+
+
+" Commands
+autocmd BufWritePre * :%s/\s\+$//e
