@@ -5,6 +5,10 @@ set history=100
 set autoindent
 set hlsearch
 set showmatch
+set tabstop=2
+set shiftwidth=2
+
+syntax on
 
 " Basic maping starts here
 let mapleader=" "
