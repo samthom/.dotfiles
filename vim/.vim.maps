@@ -7,8 +7,11 @@ set hlsearch
 set showmatch
 set tabstop=2
 set shiftwidth=2
+"set path for searching file in the sub directory
+set path+=**
+set wildmenu
 
-syntax on
+syntax enable
 
 " Basic maping starts here
 let mapleader=" "
@@ -22,3 +25,8 @@ map <leader>h :noh <CR>
 
 " Commands
 autocmd BufWritePre * :%s/\s\+$//e
+
+filetype plugin on
+
+" Create the `tags` file (may need to install ctags first)
+" command! MakeTags !ctags -R .
