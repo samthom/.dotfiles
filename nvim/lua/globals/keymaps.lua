@@ -13,7 +13,7 @@ vim.g.maplocalleader = " "
 -- Normal --
 keymap("n", "<leader>e", ":Lex 20<cr>", opts)
 keymap("n", "<leader>h", ":noh<cr>", opts)
-keymap("n", "<leader>w", ":bd<cr>", opts)
+keymap("n", "<leader>w", ":Bdelete!<cr>", opts)
 
 -- Navigate buffers
 keymap("n", "<S-l>", ":bnext<CR>", opts)
@@ -31,5 +31,8 @@ keymap("v", ">", ">gv", opts)
 keymap("v", "p", '"_dP', opts)
 
 -- keymap("n", "<leader>f", "<cmd>Telescope find_files<cr>", opts)
-keymap("n", "<leader>f", "<cmd>lua require'telescope.builtin'.find_files(require('telescope.themes').get_dropdown({ previewer = false }))<cr>", opts)
+keymap("n", "<leader>p", "<cmd>lua require'telescope.builtin'.find_files(require('telescope.themes').get_dropdown({ previewer = false }))<cr>", opts)
 keymap("n", "<c-t>", "<cmd>Telescope live_grep<cr>", opts)
+
+-- Nvimtree
+keymap("n", "<leader>e", ":NvimTreeToggle<cr>", opts)

@@ -45,11 +45,15 @@ return packer.startup(function(use)
     -- My Plugins
     use "wbthomason/packer.nvim" -- Have packer manage itself
     use "nvim-lua/popup.nvim" -- An implementation of the popup API from vim in Neovim
-    use "nvim-lua/plenary.nvim"-- Useful lua functions used in lots of plugins
+    use "nvim-lua/plenary.nvim" -- Useful lua functions used in lots of plugins
+    use "windwp/nvim-autopairs" -- Autopairs, integrates bothj cmp and lsp
+    use "numToStr/comment.nvim" -- Easily commment stuff
+    use "akinsho/bufferline.nvim"
+    use "moll/vim-bbye"
 
     -- Colorscheme
-    use "gruvbox-community/gruvbox"
-    use 'folke/tokyonight.nvim'
+    use "folke/tokyonight.nvim"
+    use "ellisonleao/gruvbox.nvim"
 
     -- cmp plugins
     use "hrsh7th/nvim-cmp" -- The completion plugin
@@ -59,6 +63,10 @@ return packer.startup(function(use)
     use "saadparwaiz1/cmp_luasnip" -- snippet completions
     use "hrsh7th/cmp-nvim-lsp"
     use "hrsh7th/cmp-nvim-lua"
+    use "kyazdani42/nvim-web-devicons"
+    use "kyazdani42/nvim-tree.lua"
+    use "nvim-lualine/lualine.nvim"
+    use "akinsho/toggleterm.nvim"
 
     -- snippets
     use "L3MON4D3/LuaSnip" -- snippet engine
@@ -66,7 +74,7 @@ return packer.startup(function(use)
 
     -- LSP
     use "neovim/nvim-lspconfig" -- enable LSP
-    use "williamboman/nvim-lsp-installer" -- simple to use language server installer 
+    use "williamboman/nvim-lsp-installer" -- simple to use language server installer
 
     -- Telescope
     use "nvim-telescope/telescope.nvim"
@@ -75,12 +83,20 @@ return packer.startup(function(use)
     use {
         "nvim-treesitter/nvim-treesitter",
         run = ":TSUpdate",
-      }
+    }
     use "p00f/nvim-ts-rainbow"
+    use "JoosepAlviste/nvim-ts-context-commentstring"
+
+    -- git
+    use "lewis6991/gitsigns.nvim"
+
+    -- cache
+    use "lewis6991/impatient.nvim"
 
     -- Automatically  setup your configuration after cloning packer.nvim
     -- Put this at the end after all the plugins
     if PACKER_BOOTSTRAP then
         require("packer").sync()
     end
+
 end)
