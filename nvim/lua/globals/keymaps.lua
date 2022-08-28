@@ -11,9 +11,8 @@ vim.g.mapleader = " "
 vim.g.maplocalleader = " "
 
 -- Normal --
-keymap("n", "<leader>e", ":Lex 20<cr>", opts)
 keymap("n", "<leader>h", ":noh<cr>", opts)
-keymap("n", "<leader>w", ":Bdelete!<cr>", opts)
+keymap("n", "<leader>dw", ":Bdelete!<cr>", opts)
 
 -- Navigate buffers
 keymap("n", "<S-l>", ":bnext<CR>", opts)
@@ -36,3 +35,4 @@ keymap("n", "<c-t>", "<cmd>Telescope live_grep<cr>", opts)
 
 -- Nvimtree
 keymap("n", "<leader>e", ":NvimTreeToggle<cr>", opts)
+keymap("n", "<leader>fe", ":NvimTreeFocus<cr>", opts)
