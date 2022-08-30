@@ -91,6 +91,14 @@ return packer.startup(function(use)
     -- git
     use "lewis6991/gitsigns.nvim"
 
+    -- DAP Plugins
+    use "mfussenegger/nvim-dap" -- Debugger adapter protocol
+    use "leoluz/nvim-dap-go"
+    use "rcarriga/nvim-dap-ui"
+    use "theHamsta/nvim-dap-virtual-text"
+    use "nvim-telescope/telescope-dap.nvim"
+
+
     -- cache
     use "lewis6991/impatient.nvim"
 
