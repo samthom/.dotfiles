@@ -1,4 +1,4 @@
-local colorscheme = "tokyonight"
+local colorscheme = "tokyonight-night"
 
 vim.g.tokyonight_style = "night"
 vim.g.tokyonight_italic_functions = true
@@ -8,4 +8,3 @@ if not status_ok then
     vim.notify("colorscheme " .. colorscheme .. "not found!")
     return
 end
-
