@@ -11,7 +11,7 @@ export ZSH="$HOME/.oh-my-zsh"
 # ZSH_THEME="spaceship"
 ZSH_THEME="minimal"
 # SOLARIZED_THEME="dark"
-
+source ~/.zsh/catppuccin-zsh-syntax-highlighting.zsh
 # Setting this variable when ZSH_THEME=random will cause zsh to load
 # a theme from this variable instead of looking in $ZSH/themes/
 # If set to an empty array, this variable will have no effect.
