@@ -145,3 +145,7 @@ fs() {
     fzf --query="$1" --select-1 --exit-0) &&
   tmux switch-client -t "$session"
 }
+
+gch() {
+    git checkout $(git for-each-ref refs/heads/ --format='%(refname:short)' | fzf)
+}
