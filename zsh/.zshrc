@@ -103,8 +103,8 @@ alias ohmyzsh="nvim ~/.oh-my-zsh"
 alias kc='kubectl'
 alias vim='nvim'
 alias vimrc='vim ~/.config/nvim/init.vim'
-alias lc='colorls -lA --sd'
-alias ls='colorls'
+# alias lc='colorls -lA --sd'
+# alias ls='colorls'
 
 # go_test() go test coloring
 go_test() {

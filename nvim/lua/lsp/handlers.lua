@@ -91,7 +91,7 @@ local lsp_keymaps = function(client, bufnr)
     vim.keymap.set('n', '<space>rn', vim.lsp.buf.rename, bufopts)
     vim.keymap.set('n', '<space>ca', vim.lsp.buf.code_action, bufopts)
     vim.keymap.set('n', 'gr', vim.lsp.buf.references, bufopts)
-    vim.keymap.set('n', '<space>ft', vim.lsp.buf.formatting, bufopts)
+    vim.keymap.set('n', '<space>ft', vim.lsp.buf.format, bufopts)
 end
 
 M.on_attach = function(client, bufnr)
@@ -109,6 +109,6 @@ if not status_ok then
     return
 end
 
-M.capabilities = cmp_nvim_lsp.update_capabilities(capabilities)
+M.capabilities = cmp_nvim_lsp.default_capabilities(capabilities)
 
 return M
