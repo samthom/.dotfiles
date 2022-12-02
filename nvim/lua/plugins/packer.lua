@@ -50,6 +50,7 @@ return packer.startup(function(use)
     use "numToStr/comment.nvim" -- Easily commment stuff
     use "akinsho/bufferline.nvim"
     use "moll/vim-bbye"
+    use "ThePrimeagen/harpoon"
     use "wakatime/vim-wakatime"
 
     -- Colorscheme

@@ -16,6 +16,22 @@ keymap("n", "<leader>dw", ":Bdelete!<cr>", opts)
 keymap("n", "<S-l>", ":bnext<CR>", opts)
 keymap("n", "<S-h>", ":bprevious<CR>", opts)
 
+-- keymap("n", "<leader>f", "<cmd>Telescope find_files<cr>", opts)
+keymap("n", "<leader>p", "<cmd>lua require'telescope.builtin'.find_files(require('telescope.themes').get_dropdown({ previewer = false }))<cr>", opts)
+keymap("n", "<c-t>", "<cmd>Telescope live_grep<cr>", opts)
+
+-- Nvimtree
+keymap("n", "<leader>e", ":NvimTreeToggle<cr>", opts)
+keymap("n", "<leader>fe", ":NvimTreeFocus<cr>", opts)
+
+-- harpoon
+keymap("n", "<leader>`", "<cmd>lua require(\"harpoon.mark\").add_file()<cr>", opts)
+keymap("n", "<leader>o", "<cmd>lua require(\"harpoon.ui\").toggle_quick_menu()<cr>", opts)
+keymap("n", "<leader>1", "<cmd>lua require(\"harpoon.ui\").nav_file(1)<cr>", opts)
+keymap("n", "<leader>2", "<cmd>lua require(\"harpoon.ui\").nav_file(2)<cr>", opts)
+keymap("n", "<leader>3", "<cmd>lua require(\"harpoon.ui\").nav_file(3)<cr>", opts)
+keymap("n", "<leader>4", "<cmd>lua require(\"harpoon.ui\").nav_file(4)<cr>", opts)
+
 -- Insert --
 -- press jk fast to enter
 keymap("i", "jk", "<ESC>", opts)
@@ -26,11 +42,3 @@ keymap("v", "<", "<gv", opts)
 keymap("v", ">", ">gv", opts)
 
 keymap("v", "p", '"_dP', opts)
-
--- keymap("n", "<leader>f", "<cmd>Telescope find_files<cr>", opts)
-keymap("n", "<leader>p", "<cmd>lua require'telescope.builtin'.find_files(require('telescope.themes').get_dropdown({ previewer = false }))<cr>", opts)
-keymap("n", "<c-t>", "<cmd>Telescope live_grep<cr>", opts)
-
--- Nvimtree
-keymap("n", "<leader>e", ":NvimTreeToggle<cr>", opts)
-keymap("n", "<leader>fe", ":NvimTreeFocus<cr>", opts)
