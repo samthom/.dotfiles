@@ -11,6 +11,10 @@ vim.g.maplocalleader = " "
 -- Normal --
 keymap("n", "<leader>h", ":noh<cr>", opts)
 keymap("n", "<leader>dw", ":Bdelete!<cr>", opts)
+keymap("n", "<C-d>", "<C-d>zz", opts)
+keymap("n", "<C-u>", "<C-u>zz", opts)
+keymap("n", "n", "nzz", opts)
+keymap("n", "N", "Nzz", opts)
 
 -- Navigate buffers
 keymap("n", "<S-l>", ":bnext<CR>", opts)
