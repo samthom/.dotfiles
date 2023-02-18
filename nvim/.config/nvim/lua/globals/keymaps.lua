@@ -36,6 +36,9 @@ keymap("n", "<leader>2", "<cmd>lua require(\"harpoon.ui\").nav_file(2)<cr>", opt
 keymap("n", "<leader>3", "<cmd>lua require(\"harpoon.ui\").nav_file(3)<cr>", opts)
 keymap("n", "<leader>4", "<cmd>lua require(\"harpoon.ui\").nav_file(4)<cr>", opts)
 
+-- quickfix list
+keymap("n", "<leader>cc", ":ccl<cr>", opts)
+
 -- Insert --
 -- press jk fast to enter
 keymap("i", "jk", "<ESC>", opts)

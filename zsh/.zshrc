@@ -159,6 +159,9 @@ export NVM_DIR="$HOME/.nvm"
 export GO_PATH=~/go
 export PATH=$PATH:/$GO_PATH/bin
 
+# openResty nginx config
+export PATH=$PATH:/opt/homebrew/Cellar/openresty/1.21.4.1_1/nginx/sbin
+
 export PATH="/usr/local/opt/openssl/bin:$PATH"
 export LDFLAGS="-L/usr/local/opt/openssl/lib"
 export CPPFLAGS="-I/usr/local/opt/openssl/include"
