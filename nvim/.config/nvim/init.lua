@@ -7,7 +7,7 @@ require('plugins.treesitter')
 require('plugins.autopairs')
 require("plugins.nvim-tree")
 require("plugins.lualine")
-require("plugins.gitsigns")
+--[[ require("plugins.gitsigns") ]]
 require("plugins.comment")
 require("plugins.toggleterm")
 require("plugins.bufferline")
