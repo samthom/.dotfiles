@@ -55,7 +55,6 @@ return packer.startup(function(use)
 
     -- Colorscheme
     use "folke/tokyonight.nvim"
-    use "ellisonleao/gruvbox.nvim"
     use { "catppuccin/nvim", as = "catppuccin" }
 
     -- cmp plugins
@@ -95,6 +94,8 @@ return packer.startup(function(use)
 
     -- git
     use "lewis6991/gitsigns.nvim"
+    use { 'TimUntersberger/neogit', requires = 'nvim-lua/plenary.nvim' }
+    use { 'sindrets/diffview.nvim', requires = 'nvim-lua/plenary.nvim' }
 
     -- DAP Plugins
     use "mfussenegger/nvim-dap" -- Debugger adapter protocol
@@ -102,7 +103,15 @@ return packer.startup(function(use)
     use "rcarriga/nvim-dap-ui"
     use "theHamsta/nvim-dap-virtual-text"
     use "nvim-telescope/telescope-dap.nvim"
-
+    use {
+      "nvim-neotest/neotest",
+      requires = {
+        "nvim-lua/plenary.nvim",
+        "nvim-treesitter/nvim-treesitter",
+        "antoinemadec/FixCursorHold.nvim",
+        "nvim-neotest/neotest-go"
+      }
+    }
 
     -- cache
     use "lewis6991/impatient.nvim"

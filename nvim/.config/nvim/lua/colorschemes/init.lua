@@ -1,7 +1,7 @@
---[[ local colorscheme = "tokyonight-night" ]]
 local colorscheme = "catppuccin"
 vim.g.catppuccin_flavour = "mocha"
 --[[ vim.g.tokyonight_style = "night" ]]
+--[[ local colorscheme = "tokyonight-night" ]]
 --[[ vim.g.tokyonight_italic_functions = true ]]
 
 local status_ok, _ = pcall(vim.cmd, "colorscheme " .. colorscheme)

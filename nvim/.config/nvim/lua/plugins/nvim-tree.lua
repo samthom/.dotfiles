@@ -40,6 +40,7 @@ nvim_tree.setup {
     hijack_netrw = true,
     renderer = {
         icons = { glyphs = glyphIcons },
+        root_folder_label = false,
     },
     --[[ ignore_ft_on_setup = { ]]
     --[[     "startify", ]]
@@ -71,7 +72,7 @@ nvim_tree.setup {
     view = {
         --[[ width = 30, ]]
         adaptive_size = true,
-        hide_root_folder = true,
+        --[[ hide_root_folder = true, ]]
         side = "left",
         mappings = {
             custom_only = false,

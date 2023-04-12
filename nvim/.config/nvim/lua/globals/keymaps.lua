@@ -16,6 +16,19 @@ keymap("n", "<C-u>", "<C-u>zz", opts)
 keymap("n", "n", "nzz", opts)
 keymap("n", "N", "Nzz", opts)
 
+-- NeoGit
+keymap("n", "<leader>ng", "<cmd>lua require(\"neogit\").open()<cr>", opts)
+keymap("n", "<leader>np", ":Neogit push<cr>", opts)
+
+-- NeoTest
+keymap("n", "<leader>tt", "<cmd>lua require(\"neotest\").run.run()<cr>", opts)
+keymap("n", "<leader>tf", "<cmd>lua require(\"neotest\").run.run(vim.fn.expand(\"%\"))<cr>", opts)
+
+-- Diffview
+keymap("n", "<leader>df", ":DiffviewOpen<cr>", opts)
+keymap("n", "<leader>dc", ":DiffviewClose<cr>", opts)
+keymap("n", "<leader>dm", ":DiffviewOpen master<cr>", opts)
+
 -- Navigate buffers
 keymap("n", "<S-l>", ":bnext<CR>", opts)
 keymap("n", "<S-h>", ":bprevious<CR>", opts)
