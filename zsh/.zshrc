@@ -162,10 +162,18 @@ export PATH=$PATH:/$GO_PATH/bin
 # openResty nginx config
 export PATH=$PATH:/opt/homebrew/Cellar/openresty/1.21.4.1_1/nginx/sbin
 
+export PATH="/opt/homebrew/opt/llvm/bin:$PATH"
+export PATH="$HOME/.emacs.d/bin:$PATH"
+
 export PATH="/usr/local/opt/openssl/bin:$PATH"
 export LDFLAGS="-L/usr/local/opt/openssl/lib"
 export CPPFLAGS="-I/usr/local/opt/openssl/include"
 export PKG_CONFIG_PATH="/usr/local/opt/openssl/lib/pkgconfig"
+export LD_LIBRARY_PATH="/Library/Developer/CommandLineTools/usr/lib/:$LD_LIBRARY_PATH"
 
 alias ls="exa --icons"
 alias ll="exa -la --icons"
+
+# emacs [startup] config
+function emacs() { /Applications/Emacs.app/Contents/MacOS/Emacs $@ &; }
+alias emacsnw="/Applications/Emacs.app/Contents/MacOS/Emacs -nw"

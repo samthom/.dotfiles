@@ -15,6 +15,7 @@ keymap("n", "<C-d>", "<C-d>zz", opts)
 keymap("n", "<C-u>", "<C-u>zz", opts)
 keymap("n", "n", "nzz", opts)
 keymap("n", "N", "Nzz", opts)
+keymap("n", "<leader>e", ":Explore<cr>", opts)
 
 -- NeoGit
 keymap("n", "<leader>ng", "<cmd>lua require(\"neogit\").open()<cr>", opts)
@@ -38,8 +39,8 @@ keymap("n", "<leader>p", "<cmd>lua require'telescope.builtin'.find_files(require
 keymap("n", "<c-t>", "<cmd>Telescope live_grep<cr>", opts)
 
 -- Nvimtree
-keymap("n", "<leader>e", ":NvimTreeToggle<cr>", opts)
-keymap("n", "<leader>fe", ":NvimTreeFocus<cr>", opts)
+--[[ keymap("n", "<leader>e", ":NvimTreeToggle<cr>", opts) ]]
+--[[ keymap("n", "<leader>fe", ":NvimTreeFocus<cr>", opts) ]]
 
 -- harpoon
 keymap("n", "<leader>`", "<cmd>lua require(\"harpoon.mark\").add_file()<cr>", opts)

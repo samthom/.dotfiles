@@ -65,9 +65,11 @@ end
 lualine.setup({
 	options = {
 		icons_enabled = true,
-		theme = "horizon",
-        component_separators = { left = '', right = ''},
-        section_separators = { left = '', right = ''},
+		theme = "auto",
+        --[[ component_separators = { left = '', right = ''}, ]]
+        --[[ section_separators = { left = '', right = ''}, ]]
+        component_separators = { left = ' ', right = ' ' },
+        section_separators = { left = ' ', right = ' ' },
 		disabled_filetypes = { "dashboard", "NvimTree", "Outline" },
 		always_divide_middle = true,
 	},
@@ -75,10 +77,10 @@ lualine.setup({
 		lualine_a = { branch, diagnostics },
 		lualine_b = { mode },
 		lualine_c = {},
-		-- lualine_x = { "encoding", "fileformat", "filetype" },
-		lualine_x = { 
-            diff, spaces, "encoding", filetype,
-        },
+		lualine_x = {diff, "fileformat", filetype},
+		--[[ lualine_x = {  ]]
+  --[[           diff, spaces, "encoding", filetype, ]]
+  --[[       }, ]]
 		lualine_y = { location },
 		lualine_z = { progress },
 	},
@@ -90,6 +92,14 @@ lualine.setup({
 		lualine_y = {},
 		lualine_z = {},
 	},
-	tabline = {},
+	--[[ tabline = {}, ]]
+    tabline = {
+        lualine_a = {},
+        lualine_b = {},
+        lualine_c = { require'tabline'.tabline_buffers },
+        lualine_x = { require'tabline'.tabline_tabs },
+        lualine_y = {},
+        lualine_z = {},
+    },
 	extensions = {},
 })

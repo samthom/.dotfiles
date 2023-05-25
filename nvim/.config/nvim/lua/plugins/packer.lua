@@ -48,14 +48,15 @@ return packer.startup(function(use)
     use "nvim-lua/plenary.nvim" -- Useful lua functions used in lots of plugins
     use "windwp/nvim-autopairs" -- Autopairs, integrates bothj cmp and lsp
     use "numToStr/comment.nvim" -- Easily commment stuff
-    use "akinsho/bufferline.nvim"
+    --[[ use "akinsho/bufferline.nvim" ]]
     use "moll/vim-bbye"
     use "ThePrimeagen/harpoon"
     use "wakatime/vim-wakatime"
+    use "kdheepak/tabline.nvim"
 
     -- Colorscheme
     use "folke/tokyonight.nvim"
-    use { "catppuccin/nvim", as = "catppuccin" }
+    --[[ use { "catppuccin/nvim", as = "catppuccin" } ]]
 
     -- cmp plugins
     use "hrsh7th/nvim-cmp" -- The completion plugin

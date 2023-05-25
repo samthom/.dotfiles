@@ -84,16 +84,6 @@ _G.packer_plugins = {
     path = "/Users/samthomas/.local/share/nvim/site/pack/packer/start/LuaSnip",
     url = "https://github.com/L3MON4D3/LuaSnip"
   },
-  ["bufferline.nvim"] = {
-    loaded = true,
-    path = "/Users/samthomas/.local/share/nvim/site/pack/packer/start/bufferline.nvim",
-    url = "https://github.com/akinsho/bufferline.nvim"
-  },
-  catppuccin = {
-    loaded = true,
-    path = "/Users/samthomas/.local/share/nvim/site/pack/packer/start/catppuccin",
-    url = "https://github.com/catppuccin/nvim"
-  },
   ["cmp-buffer"] = {
     loaded = true,
     path = "/Users/samthomas/.local/share/nvim/site/pack/packer/start/cmp-buffer",
@@ -263,6 +253,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/Users/samthomas/.local/share/nvim/site/pack/packer/start/popup.nvim",
     url = "https://github.com/nvim-lua/popup.nvim"
+  },
+  ["tabline.nvim"] = {
+    loaded = true,
+    path = "/Users/samthomas/.local/share/nvim/site/pack/packer/start/tabline.nvim",
+    url = "https://github.com/kdheepak/tabline.nvim"
   },
   ["telescope-dap.nvim"] = {
     loaded = true,
