@@ -46,7 +46,7 @@ end
 
 local function lsp_highlight_document(client)
     -- Set autocommands conditional on server_capabilities
-    if client.server_capabilities.documentFormattingProvide then
+    if client.server_capabilities.documentFormattingProvider then
         vim.api.nvim_exec(
             [[
       augroup lsp_document_highlight
@@ -95,9 +95,10 @@ local lsp_keymaps = function(client, bufnr)
 end
 
 M.on_attach = function(client, bufnr)
-    -- if client.name == "tsserver" then
-      --   client.resolved_capabilities.document_formatting = false
-    -- end
+    --[[ if client.name == "tsserver" then ]]
+    --[[     vim.opt.tabstop = 2 ]]
+    --[[ end ]]
+
     lsp_keymaps(client, bufnr)
     lsp_highlight_document(client)
 end

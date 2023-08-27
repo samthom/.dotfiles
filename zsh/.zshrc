@@ -100,7 +100,8 @@ source ~/.zsh_profile
 
 alias zshconfig="nvim ~/.dotfiles/zsh/.zshrc"
 alias ohmyzsh="nvim ~/.oh-my-zsh"
-alias kc='kubectl'
+# alias kc='kubectl'
+alias kc='kubecolor'
 alias vim='nvim'
 alias vimrc='vim ~/.config/nvim/init.vim'
 # alias lc='colorls -lA --sd'
@@ -164,6 +165,7 @@ export PATH=$PATH:/opt/homebrew/Cellar/openresty/1.21.4.1_1/nginx/sbin
 
 export PATH="/opt/homebrew/opt/llvm/bin:$PATH"
 export PATH="$HOME/.emacs.d/bin:$PATH"
+export PATH="/Users/samthomas/Library/Python/3.11/bin:$PATH"
 
 export PATH="/usr/local/opt/openssl/bin:$PATH"
 export LDFLAGS="-L/usr/local/opt/openssl/lib"
@@ -175,5 +177,9 @@ alias ls="exa --icons"
 alias ll="exa -la --icons"
 
 # emacs [startup] config
-function emacs() { /Applications/Emacs.app/Contents/MacOS/Emacs $@ &; }
-alias emacsnw="/Applications/Emacs.app/Contents/MacOS/Emacs -nw"
+alias emacs="emacsclient -c -a 'emacs'"
+
+alias ssh="kitty +kitten ssh"
+
+autoload -U +X bashcompinit && bashcompinit
+complete -o nospace -C /opt/homebrew/bin/terraform terraform
