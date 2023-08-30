@@ -67,7 +67,7 @@ return packer.startup(function(use)
     use "hrsh7th/cmp-nvim-lsp"
     use "hrsh7th/cmp-nvim-lua"
     use "kyazdani42/nvim-web-devicons"
-    use "kyazdani42/nvim-tree.lua"
+    --[[ use "kyazdani42/nvim-tree.lua" ]]
     use "nvim-lualine/lualine.nvim"
     use "akinsho/toggleterm.nvim"
     use "kylechui/nvim-surround"
@@ -77,8 +77,25 @@ return packer.startup(function(use)
     use "rafamadriz/friendly-snippets"
 
     -- LSP
+    use {
+      'VonHeikemen/lsp-zero.nvim',
+      branch = 'v2.x',
+      requires = {
+        -- LSP Support
+        {'neovim/nvim-lspconfig'},             -- Required
+        {'williamboman/mason.nvim'},           -- Optional
+        {'williamboman/mason-lspconfig.nvim'}, -- Optional
+
+        -- Autocompletion
+        {'hrsh7th/nvim-cmp'},     -- Required
+        {'hrsh7th/cmp-nvim-lsp'}, -- Required
+        {'L3MON4D3/LuaSnip'},     -- Required
+      }
+    }
+    use "williamboman/mason.nvim"
+    use "williamboman/mason-lspconfig.nvim"
     use "neovim/nvim-lspconfig" -- enable LSP
-    use "williamboman/nvim-lsp-installer" -- simple to use language server installer
+    --[[ use "williamboman/nvim-lsp-installer" -- simple to use language server installer ]]
     use "ray-x/lsp_signature.nvim"
     --[[ use "jose-elias-alvarez/null-ls.nvim" ]]
 
@@ -94,6 +111,7 @@ return packer.startup(function(use)
     use "JoosepAlviste/nvim-ts-context-commentstring"
 
     -- git
+    use "ThePrimeagen/git-worktree.nvim"
     use "lewis6991/gitsigns.nvim"
     use { 'TimUntersberger/neogit', requires = 'nvim-lua/plenary.nvim' }
     use { 'sindrets/diffview.nvim', requires = 'nvim-lua/plenary.nvim' }
