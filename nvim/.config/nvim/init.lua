@@ -18,9 +18,8 @@ require("plugins.surround")
 require("plugins.lsp-signature")
 require("plugins.lsp")
 require("dap.go")
+require("dap.dap")
 require("dap.ui")
 require('colorschemes')
 require('plugins.harpoon')
 require('plugins.worktree')
---[[ require("plugins.nvim-tree") ]]
---[[ require("plugins.bufferline") ]]

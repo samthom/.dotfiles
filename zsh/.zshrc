@@ -1,3 +1,6 @@
+# Arduino completion - https://arduino.github.io/arduino-cli/0.34/command-line-completion/#zsh
+fpath=($HOME/completion_zsh $fpath)
+
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
@@ -183,3 +186,12 @@ alias ssh="kitty +kitten ssh"
 
 autoload -U +X bashcompinit && bashcompinit
 complete -o nospace -C /opt/homebrew/bin/terraform terraform
+
+# bun completions
+[ -s "/Users/samthomas/.bun/_bun" ] && source "/Users/samthomas/.bun/_bun"
+
+# bun
+export BUN_INSTALL="$HOME/.bun"
+export PATH="$BUN_INSTALL/bin:$PATH"
+
+export PATH="/opt/homebrew/opt/mysql-client/bin:$PATH"

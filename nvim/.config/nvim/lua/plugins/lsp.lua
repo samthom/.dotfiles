@@ -1,4 +1,5 @@
 local lsp = require("lsp-zero")
+local lspconfig = require("lspconfig")
 
 lsp.preset("recommended")
 
@@ -8,6 +9,14 @@ lsp.ensure_installed({
     'clangd',
     'gopls'
 })
+
+local function organize_imports()
+    local params = {
+        command = "_typescript.organizeImports",
+        arguments = { vim.api.nvim_buf_get_name(0) },
+    }
+    vim.lsp.buf.execute_command(params)
+end
 
 -- Fix Undefined global 'vim'
 lsp.nvim_workspace()
@@ -55,6 +64,26 @@ lsp.on_attach(function(_, bufnr) -- client is unused
     vim.keymap.set('n', '<space>ft', function() vim.lsp.buf.format() end, opts)
     vim.keymap.set("i", "<C-h>", function() vim.lsp.buf.signature_help() end, opts)
 end)
+
+-- Arduino setup
+local fqbn = "arduino:renesas_uno:unor4wifi"
+lspconfig.arduino_language_server.setup {
+  cmd = {
+      "arduino-language-server",
+      "-cli-config", "/Users/samthomas/Library/Arduino15/arduino-cli.yaml",
+      "-fqbn",
+      fqbn
+  },
+}
+
+lspconfig.tsserver.setup {
+    commands = {
+        OrganizeImports = {
+            organize_imports,
+            description = "Organize Imports",
+        }
+    }
+}
 
 lsp.setup()
 

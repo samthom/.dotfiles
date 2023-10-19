@@ -9,8 +9,9 @@ vim.g.mapleader = " "
 vim.g.maplocalleader = " "
 
 -- Normal --
-keymap("n", "<leader>h", ":noh<cr>", opts)
-keymap("n", "<leader>dw", ":Bdelete!<cr>", opts)
+--[[ keymap("n", "<leader>h", ":noh<cr>", opts) ]]
+--[[ keymap("n", "<leader>dw", ":Bdelete!<cr>", opts) ]]
+keymap("n", "<leader>dw", ":bd<cr>", opts)
 keymap("n", "<C-d>", "<C-d>zz", opts)
 keymap("n", "<C-u>", "<C-u>zz", opts)
 keymap("n", "n", "nzzzv", opts)
