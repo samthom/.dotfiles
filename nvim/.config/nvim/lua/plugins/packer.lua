@@ -40,14 +40,12 @@ packer.init {
 
 -- Install your plugins here
 return packer.startup(function(use)
-
-
     -- My Plugins
     use "wbthomason/packer.nvim" -- Have packer manage itself
-    use "nvim-lua/popup.nvim" -- An implementation of the popup API from vim in Neovim
-    use "nvim-lua/plenary.nvim" -- Useful lua functions used in lots of plugins
-    use "windwp/nvim-autopairs" -- Autopairs, integrates bothj cmp and lsp
-    use "numToStr/comment.nvim" -- Easily commment stuff
+    use "nvim-lua/popup.nvim"    -- An implementation of the popup API from vim in Neovim
+    use "nvim-lua/plenary.nvim"  -- Useful lua functions used in lots of plugins
+    use "windwp/nvim-autopairs"  -- Autopairs, integrates bothj cmp and lsp
+    use "numToStr/comment.nvim"  -- Easily commment stuff
     --[[ use "akinsho/bufferline.nvim" ]]
     use "moll/vim-bbye"
     use "ThePrimeagen/harpoon"
@@ -59,10 +57,10 @@ return packer.startup(function(use)
     use { "catppuccin/nvim", as = "catppuccin" }
 
     -- cmp plugins
-    use "hrsh7th/nvim-cmp" -- The completion plugin
-    use "hrsh7th/cmp-buffer" -- buffer completions
-    use "hrsh7th/cmp-path" -- path completions
-    use "hrsh7th/cmp-cmdline" -- cmdline completions
+    use "hrsh7th/nvim-cmp"         -- The completion plugin
+    use "hrsh7th/cmp-buffer"       -- buffer completions
+    use "hrsh7th/cmp-path"         -- path completions
+    use "hrsh7th/cmp-cmdline"      -- cmdline completions
     use "saadparwaiz1/cmp_luasnip" -- snippet completions
     use "hrsh7th/cmp-nvim-lsp"
     use "hrsh7th/cmp-nvim-lua"
@@ -78,19 +76,19 @@ return packer.startup(function(use)
 
     -- LSP
     use {
-      'VonHeikemen/lsp-zero.nvim',
-      branch = 'v2.x',
-      requires = {
-        -- LSP Support
-        {'neovim/nvim-lspconfig'},             -- Required
-        {'williamboman/mason.nvim'},           -- Optional
-        {'williamboman/mason-lspconfig.nvim'}, -- Optional
+        'VonHeikemen/lsp-zero.nvim',
+        branch = 'v2.x',
+        requires = {
+            -- LSP Support
+            { 'neovim/nvim-lspconfig' },       -- Required
+            { 'williamboman/mason.nvim' },     -- Optional
+            { 'williamboman/mason-lspconfig.nvim' }, -- Optional
 
-        -- Autocompletion
-        {'hrsh7th/nvim-cmp'},     -- Required
-        {'hrsh7th/cmp-nvim-lsp'}, -- Required
-        {'L3MON4D3/LuaSnip'},     -- Required
-      }
+            -- Autocompletion
+            { 'hrsh7th/nvim-cmp' }, -- Required
+            { 'hrsh7th/cmp-nvim-lsp' }, -- Required
+            { 'L3MON4D3/LuaSnip' }, -- Required
+        }
     }
     use "williamboman/mason.nvim"
     use "williamboman/mason-lspconfig.nvim"
@@ -113,8 +111,17 @@ return packer.startup(function(use)
     -- git
     use "ThePrimeagen/git-worktree.nvim"
     use "lewis6991/gitsigns.nvim"
-    use { 'TimUntersberger/neogit', requires = 'nvim-lua/plenary.nvim' }
+    --[[ use { 'TimUntersberger/neogit', requires = 'nvim-lua/plenary.nvim' } ]]
     use { 'sindrets/diffview.nvim', requires = 'nvim-lua/plenary.nvim' }
+    use {
+        "NeogitOrg/neogit",
+        requires = {
+            "nvim-lua/plenary.nvim", -- required
+            "nvim-telescope/telescope.nvim", -- optional
+            "sindrets/diffview.nvim", -- optional
+            "ibhagwan/fzf-lua",      -- optional
+        },
+    }
 
     -- DAP Plugins
     use "mfussenegger/nvim-dap" -- Debugger adapter protocol
@@ -123,13 +130,13 @@ return packer.startup(function(use)
     use "theHamsta/nvim-dap-virtual-text"
     use "nvim-telescope/telescope-dap.nvim"
     use {
-      "nvim-neotest/neotest",
-      requires = {
-        "nvim-lua/plenary.nvim",
-        "nvim-treesitter/nvim-treesitter",
-        "antoinemadec/FixCursorHold.nvim",
-        "nvim-neotest/neotest-go"
-      }
+        "nvim-neotest/neotest",
+        requires = {
+            "nvim-lua/plenary.nvim",
+            "nvim-treesitter/nvim-treesitter",
+            "antoinemadec/FixCursorHold.nvim",
+            "nvim-neotest/neotest-go"
+        }
     }
 
     -- cache
@@ -140,5 +147,4 @@ return packer.startup(function(use)
     if PACKER_BOOTSTRAP then
         require("packer").sync()
     end
-
 end)
