@@ -5,6 +5,8 @@ end
 
 neogit.setup {
     integrations = {
-        diffview = true
+        diffview = true,
+        telescope = true,
+        fzf_lue = true
     }
 }
