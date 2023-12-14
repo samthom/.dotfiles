@@ -7,7 +7,9 @@
 
 source "$HOME/.config/sketchybar/colors.sh"
 
-FONT="Hack Nerd Font"
+# FONT="FiraCode Nerd Font"
+FONT="Liga SFMono Nerd Font"
+NERD_FONT="Liga SFMono Nerd Font"
 PLUGIN_DIR="$HOME/.config/sketchybar/plugins"
 
 ##### Bar Appearance #####
@@ -22,8 +24,8 @@ bar=(
   position=top     
   notch_width=188
   sticky=off       
-  padding_left=12  
-  padding_right=12
+  padding_left=10  
+  padding_right=10
   color=0x00000000
   y_offset=5
 )
@@ -57,6 +59,18 @@ sketchybar --default "${default[@]}"
 
 SPACE_ICONS=("1" "2" "3" "4" "5" "6" "7" "8" "9" "10")
 
+sketchybar --add item menu left                                 \
+           --set menu icon=                                    \
+                      background.color=$DARK3                   \
+                      background.corner_radius=5                \
+                      label.drawing=off                         \
+                      background.height=30                      \
+                      icon.padding_right=10                     \
+                      icon.font.size=18                         \
+                      icon.padding_left=10                      \
+                      padding_right=10                          \
+                      padding_left=10                           \
+
 spaces=()
 for i in "${!SPACE_ICONS[@]}"
 do
@@ -69,7 +83,7 @@ do
                               icon.padding_left=8                        \
                               background.corner_radius=5                 \
                               background.height=20                       \
-                              background.color=0x30ffffff               \
+                              background.color=0x30ffffff                \
                               background.drawing=off                     \
                               label.drawing=off                          \
                               script="$PLUGIN_DIR/space.sh"              \
@@ -90,14 +104,18 @@ sketchybar --add item space_separator left                         \
            --add item front_app left                               \
            --set front_app       script="$PLUGIN_DIR/front_app.sh" \
                                  icon.drawing=off                  \
+                                 label.padding_left=8              \
                                  label.padding_right=8             \
-                                 background.color="$BACKGROUND"    \
+                                 background.color="$DARK5"         \
+                                 background.padding_right=0        \
+                                 background.corner_radius=5        \
            --subscribe front_app front_app_switched
 
 sketchybar --add bracket spaces "${spaces[@]}" space_separator front_app \
-           --set spaces background.color=$BACKGROUND \
-                        background.corner_radius=5   \
-                        background.height=30         \
+           --set spaces background.color=$DARK4                          \
+                        background.corner_radius=5                       \
+                        background.height=30                             \
+
 
 ##### Adding Right Items #####
 # In the same way as the left items we can add items to the right side.
@@ -114,24 +132,20 @@ sketchybar --add item clock right                              \
            --set clock   update_freq=10                        \
                          icon=󰅐                                \
                          script="$PLUGIN_DIR/clock.sh"         \
-                         background.color="$BACKGROUND"        \
+                         background.color="$DARK2"             \
                          background.corner_radius=5            \
+                         background.padding_right=0            \
+                         background.padding_left=0             \
+                         icon.color="$SELECTION_FOREGROUND"    \
                          icon.padding_left=8                   \
                          label.padding_right=8                 \
-                                                               \
-           --add item wifi right                               \
-           --set wifi    script="$PLUGIN_DIR/wifi.sh"          \
-                         icon=󰖩                                \
-                         background.color="$BACKGROUND"        \
-                         background.corner_radius=5            \
-                         icon.padding_left=8                   \
-                         label.padding_right=8                 \
-           --subscribe wifi wifi_change                        \
                                                                \
            --add item volume right                             \
            --set volume  script="$PLUGIN_DIR/volume.sh"        \
-                         background.color="$BACKGROUND"        \
+                         background.color="$DARK3"             \
                          background.corner_radius=5            \
+                         background.padding_right=0            \
+                         background.padding_left=0             \
                          icon.padding_left=8                   \
                          icon.padding_right=8                  \
                          label.drawing=off                     \
@@ -140,11 +154,33 @@ sketchybar --add item clock right                              \
            --add item battery right                            \
            --set battery script="$PLUGIN_DIR/battery.sh"       \
                          update_freq=120                       \
-                         background.color="$BACKGROUND"        \
+                         background.color="$DARK4"             \
                          background.corner_radius=5            \
+                         background.padding_right=0            \
+                         background.padding_left=0             \
                          icon.padding_left=8                   \
                          label.padding_right=8                 \
-           --subscribe battery system_woke power_source_change
+           --subscribe battery system_woke power_source_change \
+                                                               \
+           --add   item slack right                            \
+           --set   slack background.color="$DARK5"             \
+                    update_freq=60                             \
+                    script="$PLUGIN_DIR/slack.sh"              \
+                    icon.padding_left=8                        \
+                    icon.padding_right=8                       \
+                     background.corner_radius=5                \
+                         background.padding_right=0            \
+                         background.padding_left=0             \
+                    icon.font.size=18                          \
+           --subscribe slack system_woke
+
+sketchybar --add bracket info slack battery volume clock       \
+           --set info background.color=$DARK3                  \
+                        background.padding_right=0             \
+                        label.padding_right=0                  \
+                        background.corner_radius=5             \
+                        background.height=30                   
+
 
 ##### Finalizing Setup #####
 # The below command is only needed at the end of the initial configuration to

@@ -167,7 +167,6 @@ export PATH=$PATH:/$GO_PATH/bin
 export PATH=$PATH:/opt/homebrew/Cellar/openresty/1.21.4.1_1/nginx/sbin
 
 export PATH="/opt/homebrew/opt/llvm/bin:$PATH"
-export PATH="$HOME/.emacs.d/bin:$PATH"
 export PATH="/Users/samthomas/Library/Python/3.11/bin:$PATH"
 
 export PATH="/usr/local/opt/openssl/bin:$PATH"
@@ -176,11 +175,9 @@ export CPPFLAGS="-I/usr/local/opt/openssl/include"
 export PKG_CONFIG_PATH="/usr/local/opt/openssl/lib/pkgconfig"
 export LD_LIBRARY_PATH="/Library/Developer/CommandLineTools/usr/lib/:$LD_LIBRARY_PATH"
 
-alias ls="exa --icons"
-alias ll="exa -la --icons"
+alias ls="eza --icons"
+alias ll="eza -la --icons"
 
-# emacs [startup] config
-alias emacs="emacsclient -c -a 'emacs'"
 
 alias ssh="kitty +kitten ssh"
 
