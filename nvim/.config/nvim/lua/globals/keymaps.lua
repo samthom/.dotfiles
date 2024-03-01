@@ -40,7 +40,7 @@ keymap("n", "<leader>dm", ":DiffviewOpen master<cr>", opts)
 keymap("n", "<S-l>", ":bnext<CR>", opts)
 keymap("n", "<S-h>", ":bprevious<CR>", opts)
 
--- keymap("n", "<leader>f", "<cmd>Telescope find_files<cr>", opts)
+keymap("n", "<leader>fb", "<cmd>Telescope buffers<cr>", opts)
 keymap("n", "<leader>p", "<cmd>lua require'telescope.builtin'.find_files(require('telescope.themes').get_dropdown({ previewer = false }))<cr>", opts)
 keymap("n", "<c-t>", "<cmd>Telescope live_grep<cr>", opts)
 
@@ -59,6 +59,12 @@ keymap("n", "<leader>4", "<cmd>lua require(\"harpoon.ui\").nav_file(4)<cr>", opt
 -- quickfix list
 keymap("n", "<leader>cc", ":ccl<cr>", opts)
 keymap("n", "<leader>co", ":copen<cr>", opts)
+keymap("n", "<leader>h", ":cnext<cr>", opts)
+keymap("n", "<leader>;", ":cprev<cr>", opts)
+
+-- location list
+keymap("n", "<leader>k", ":lnext<cr>", opts)
+keymap("n", "<leader>j", ":lprev<cr>", opts)
 
 -- Insert --
 -- press jk fast to enter

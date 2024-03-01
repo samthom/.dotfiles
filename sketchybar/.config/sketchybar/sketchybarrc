@@ -69,7 +69,6 @@ sketchybar --add item menu left                                 \
                       icon.font.size=18                         \
                       icon.padding_left=10                      \
                       padding_right=10                          \
-                      padding_left=10                           \
 
 spaces=()
 for i in "${!SPACE_ICONS[@]}"
