@@ -179,7 +179,6 @@ alias ls="eza --icons"
 alias ll="eza -la --icons"
 
 
-alias ssh="kitty +kitten ssh"
 
 autoload -U +X bashcompinit && bashcompinit
 complete -o nospace -C /opt/homebrew/bin/terraform terraform
